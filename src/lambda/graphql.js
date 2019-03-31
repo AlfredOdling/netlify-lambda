@@ -19,7 +19,6 @@ const dataSources = () => ({
   randomUserAPI: new RandomUserAPI(),
 })
 
-
 // -------------- Schema ---------------
 const typeDefs = gql`
   """ QUERIES """
@@ -54,9 +53,9 @@ const resolvers = {
 }
 
 const server = new ApolloServer({
-  // engine: {
-  //   apiKey: process.env.ENGINE_API_KEY,
-  // },
+  engine: {
+    apiKey: process.env.ENGINE_API_KEY,
+  },
   dataSources,
   typeDefs,
   resolvers,
